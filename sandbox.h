@@ -22,7 +22,7 @@ typedef struct s_img
 {
 	void	*img;
 	int		*data;
-	int		matrix[WIN_HEIGHT][WIN_WIDTH ];
+	int		matrix[WIN_HEIGHT][WIN_WIDTH];
 	int		bus;
 	int		bpp;
 	int		endian;
@@ -32,16 +32,6 @@ typedef struct s_store
 {
 
 } t_store;
-
-typedef struct s_player
-{
-	double x;
-	double y;
-	double step;
-	double rotation_angle;
-	double rotation_speed;
-	char **map;
-} t_player;
 
 typedef struct s_mlx
 {
