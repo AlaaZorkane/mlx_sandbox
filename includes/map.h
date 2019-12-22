@@ -6,7 +6,7 @@
 /*   By: azorkane <azorkane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/21 11:20:17 by azorkane          #+#    #+#             */
-/*   Updated: 2019/12/21 12:49:39 by azorkane         ###   ########.fr       */
+/*   Updated: 2019/12/22 20:42:35 by azorkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,5 @@ typedef struct s_map
 } t_map;
 
 void	map_setup();
-
+int		has_wall_at(int x, int y);
 #endif

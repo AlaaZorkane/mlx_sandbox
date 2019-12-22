@@ -6,13 +6,15 @@
 /*   By: azorkane <azorkane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/21 10:45:55 by azorkane          #+#    #+#             */
-/*   Updated: 2019/12/21 10:52:17 by azorkane         ###   ########.fr       */
+/*   Updated: 2019/12/22 22:06:13 by azorkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_CONSTS_H
 # define FT_CONSTS_H
 # include "cub3d.h"
+
+# define TILE 32
 
 # define KEY_A 0
 # define KEY_S 1

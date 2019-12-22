@@ -6,7 +6,7 @@
 /*   By: azorkane <azorkane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/21 11:26:59 by azorkane          #+#    #+#             */
-/*   Updated: 2019/12/21 11:32:11 by azorkane         ###   ########.fr       */
+/*   Updated: 2019/12/22 20:42:28 by azorkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,10 @@ void	set_dimensions()
 	while (map[index][0] == '1')
 		index++;
 	store.map.rows = index;
+}
+
+
+int		has_wall_at(int x, int y)
+{
+	return (store.map.grid[y][x] == '1');
 }
