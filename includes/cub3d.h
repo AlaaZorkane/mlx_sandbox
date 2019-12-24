@@ -6,7 +6,7 @@
 /*   By: azorkane <azorkane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/21 11:33:43 by azorkane          #+#    #+#             */
-/*   Updated: 2019/12/22 11:16:02 by azorkane         ###   ########.fr       */
+/*   Updated: 2019/12/23 20:54:04 by azorkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <mlx.h>
 # include <math.h>
 # include "player.h"
+# include "control.h"
 # include "rays.h"
 # include "utils.h"
 # include "map.h"
@@ -36,7 +37,7 @@ typedef struct s_store
 	t_img		img;
 	t_player	player;
 	t_map		map;
-	t_ray		*rays;
+	t_rays		*rays;
 } 	t_store;
 
 t_store store;

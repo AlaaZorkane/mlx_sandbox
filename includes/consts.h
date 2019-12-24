@@ -6,7 +6,7 @@
 /*   By: azorkane <azorkane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/21 10:45:55 by azorkane          #+#    #+#             */
-/*   Updated: 2019/12/22 22:06:13 by azorkane         ###   ########.fr       */
+/*   Updated: 2019/12/24 14:45:52 by azorkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,10 @@
 # include "cub3d.h"
 
 # define TILE 32
-
+# define FOV (60 * (M_PI / 180))
+# define MLX_CROSS 17
+# define MLX_KEYDOWN 2
+# define MLX_KEYUP 3
 # define KEY_A 0
 # define KEY_S 1
 # define KEY_D 2
@@ -63,5 +66,15 @@
 # define KEY_RIGHT 124
 # define KEY_DOWN 125
 # define KEY_UP 126
+
+typedef struct	s_keys
+{
+	int			s:1;
+	int			d:1;
+	int			z:1;
+	int			w:1;
+	int			left:1;
+	int			right:1;
+}				t_keys;
 
 #endif

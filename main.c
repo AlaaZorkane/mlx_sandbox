@@ -1,5 +1,4 @@
 #include "cub3d.h"
-
 void init()
 {
 	map_setup();
@@ -9,7 +8,8 @@ void init()
 	player_setup();
 }
 
-void dispatch() {
+void dispatch()
+{
 	player_move();
 	cast_rays();
 	project();
@@ -20,8 +20,8 @@ int main()
 {
 	init();
 	render();
-	/* mlx_hook(mlx.win, 17, 0, kill, (void *)0);
-	mlx_hook(mlx.win, 2, 0, key_hook, (void *)0);
-	mlx_mouse_hook(mlx.win, mouse_hook, (void *)0); */
+	mlx_hook(store.mlx.window, MLX_CROSS, 0, die, (void *)0);
+	mlx_hook(store.mlx.window, MLX_KEYDOWN, 0, key_isdown, (void *)0);
+	mlx_hook(store.mlx.window, MLX_KEYUP, 0, key_isup, (void *)0);
 	mlx_loop(store.mlx.mlx);
 }

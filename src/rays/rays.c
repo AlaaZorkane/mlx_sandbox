@@ -6,18 +6,18 @@
 /*   By: azorkane <azorkane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/22 11:14:27 by azorkane          #+#    #+#             */
-/*   Updated: 2019/12/22 20:38:24 by azorkane         ###   ########.fr       */
+/*   Updated: 2019/12/23 23:44:56 by azorkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	rays_setup()
+void		rays_setup()
 {
 	store.rays = malloc(store.img.width);
 }
 
-float	prepare_angle(float angle, int id)
+static float	prepare_angle(float angle, int id)
 {
 	angle = normalize(angle);
 
@@ -31,28 +31,69 @@ float	prepare_angle(float angle, int id)
 		store.rays[id].ray_face |= RAY_LEFT;
 }
 
-void	cast_ray(float angle, int id)
+static void		record_direction(char direction, float distance, t_rays *ray)
 {
-	float horizontal_distance;
-	float vertical_distance;
-
-	horizontal_distance = horizontal_cast(angle, id);
-	vertical_distance = vertical_cast(angle, id);
+	if (direction == 'h')
+	{
+		ray->distance = distance;
+		ray->wall_x = ray->vertical.wall_hit_x;
+		ray->wall_y = ray->vertical.wall_hit_y;
+		ray->wall_content = ray->vertical.wall_content;
+		ray->vertical_flag = 1;
+	}
+	else if (direction == 'v')
+	{
+		ray->distance = distance;
+		ray->wall_x = ray->horizontal.wall_hit_x;
+		ray->wall_y = ray->horizontal.wall_hit_y;
+		ray->wall_content = ray->horizontal.wall_content;
+		ray->vertical_flag = 0;
+	}
 }
 
-void	cast_rays()
+static void		record_cast(float horizontal_d, float vertical_d, float angle, int id)
+{
+	t_rays	*ray;
+
+	ray = &(store.rays[id]);
+	if (horizontal_d > vertical_d)
+		record_direction('h', horizontal_d, ray);
+	else
+		record_direction('v', vertical_d, ray);
+	ray->ray_angle = angle;
+}
+
+static void		cast_ray(float angle, int id)
+{
+	t_rays	*ray;
+	float	horizontal_distance;
+	float	vertical_distance;
+
+	ray = &(store.rays[id]);
+	horizontal_cast(angle, id);
+	vertical_cast(angle, id);
+	horizontal_distance = ray->horizontal.wall_hit
+		? distance_point2point(store.player.x, store.player.y,
+			ray->horizontal.wall_hit_x, ray->horizontal.wall_hit_y)
+		: MAXFLOAT;
+	vertical_distance = ray->vertical.wall_hit
+		? distance_point2point(store.player.x, store.player.y,
+			ray->vertical.wall_hit_x, ray->vertical.wall_hit_y)
+		: MAXFLOAT;
+	record_cast(horizontal_distance, vertical_distance, angle, id);
+}
+
+void		cast_rays()
 {
 	int		id;
     float	angle;
-	float	fov;
 
 	id = -1;
-	fov = 60 * (M_PI / 180);
-	angle = store.player.rotation_angle - fov / 2;
+	angle = store.player.rotation_angle - FOV / 2;
 	while (++id < store.img.width)
 	{
 		angle = prepare_angle(angle, id);
-		car_ray(angle, id);
-        angle += fov / store.img.width;
+		cast_ray(angle, id);
+        angle += FOV / store.img.width;
 	}
 }

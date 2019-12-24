@@ -6,7 +6,7 @@
 /*   By: azorkane <azorkane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/21 14:01:41 by azorkane          #+#    #+#             */
-/*   Updated: 2019/12/22 22:10:20 by azorkane         ###   ########.fr       */
+/*   Updated: 2019/12/24 00:18:09 by azorkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 # define RAY_DOWN (1 << 2)
 # define RAY_LEFT (1 << 3)
 
-typedef struct s_intersect {
+typedef struct	s_intersect {
 	float 				x_intersect;
 	float				y_intersect;
 	float				x_step;
 	float				y_step;
 }	t_intersect;
 
-typedef struct s_direction_cast {
+typedef struct	s_direction_cast {
 	int 				wall_hit:1;
     int					wall_content;
     float				wall_hit_x;
@@ -34,7 +34,16 @@ typedef struct s_direction_cast {
     float				next_hit_y;
 }	t_direction_cast;
 
-typedef struct s_rays {
+typedef	struct	s_projection {
+	int		line_height;
+	int		wall_top;
+	int		wall_bottom;
+	float	wall_distance;
+	float	wall_height;
+	float	plane_distance;
+}	t_projection;
+
+typedef struct	s_rays {
 	char				ray_face;
     char 				wall_content;
     int 				vertical_flag;
@@ -45,5 +54,9 @@ typedef struct s_rays {
 	t_direction_cast	horizontal;
 	t_direction_cast	vertical;
 	t_intersect 		intersects;
+	t_projection		projection;
 } 	t_rays;
+
+void		hortizontal_cast(float angle, int id);
+void		vertical_cast(float angle, int id);
 #endif

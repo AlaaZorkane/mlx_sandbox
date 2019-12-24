@@ -1,40 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   die.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azorkane <azorkane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/21 11:26:59 by azorkane          #+#    #+#             */
-/*   Updated: 2019/12/23 11:58:42 by azorkane         ###   ########.fr       */
+/*   Created: 2019/12/23 20:53:43 by azorkane          #+#    #+#             */
+/*   Updated: 2019/12/23 21:58:05 by azorkane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	set_dimensions()
+int	die(void *param)
 {
-	int	index;
-	char **map;
-
-	map = store.map.grid;
-	index = 0;
-	while (map[0][index] == '1')
-		index++;
-	store.map.cols = index;
-	index = 0;
-	while (map[index][0] == '1')
-		index++;
-	store.map.rows = index;
-}
-
-
-int		has_wall_at(int x, int y)
-{
-	int	grid_x;
-	int	grid_y;
-
-	grid_x = floor(x / TILE);
-	grid_y = floor(y / TILE);
-	return (store.map.grid[grid_x][grid_y] == '1');
+	(void)param;
+	exit(0);
+	return (0);
 }
