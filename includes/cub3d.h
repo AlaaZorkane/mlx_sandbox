@@ -18,8 +18,9 @@
 # include <mlx.h>
 # include <math.h>
 # include "player.h"
-# include "control.h"
 # include "rays.h"
+# include "draw.h"
+# include "control.h"
 # include "utils.h"
 # include "map.h"
 # include "consts.h"
@@ -41,5 +42,7 @@ typedef struct s_store
 } 	t_store;
 
 t_store store;
+
+void dispatch();
 
 #endif

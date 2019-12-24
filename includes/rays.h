@@ -26,8 +26,8 @@ typedef struct	s_intersect {
 }	t_intersect;
 
 typedef struct	s_direction_cast {
+    char				wall_content;
 	int 				wall_hit:1;
-    int					wall_content;
     float				wall_hit_x;
     float				wall_hit_y;
     float				next_hit_x;
@@ -57,6 +57,9 @@ typedef struct	s_rays {
 	t_projection		projection;
 } 	t_rays;
 
-void		hortizontal_cast(float angle, int id);
+void		horizontal_cast(float angle, int id);
 void		vertical_cast(float angle, int id);
+void		cast_rays();
+void		rays_setup();
+void		project();
 #endif

@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_C_H
-# define FT_CUB3D_H
+#ifndef FT_CONTROL_H
+# define FT_CONTROL_H
 
 
 int	die(void *param);

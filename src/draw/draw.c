@@ -25,7 +25,7 @@ void	draw_content(t_rays *ray, int id)
 {
 	int y;
 
-	y = ray->projection.wall_top;
+	y = ray->projection.wall_top - 1;
 	while (++y < ray->projection.wall_bottom)
 	{
 		store.img.matrix[y][id] = 0xFFFFFF;

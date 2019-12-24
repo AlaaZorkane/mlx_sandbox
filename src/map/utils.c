@@ -34,7 +34,7 @@ int		has_wall_at(int x, int y)
 	int	grid_x;
 	int	grid_y;
 
-	grid_x = floor(x / TILE);
-	grid_y = floor(y / TILE);
-	return (store.map.grid[grid_x][grid_y] == '1');
+	grid_x = floorf((float)x / TILE);
+	grid_y = floorf((float)y / TILE);
+	return (store.map.grid[grid_y][grid_x] == '1');
 }

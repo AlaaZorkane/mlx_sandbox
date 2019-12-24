@@ -28,7 +28,7 @@ void set_player_coords()
 {
 	char	**objects;
 	int		index;
-	char	dictio;
+	char	*dictio;
 
 	dictio = strdup("NESW");
 	objects = store.map.objects;
@@ -37,10 +37,10 @@ void set_player_coords()
 	{
 		if (strchr(dictio, objects[index][0]))
 		{
-			store.player.x = objects[index][1] - '0';
-			store.player.y = objects[index][2] - '0';
+			store.player.x = (objects[index][1] - '0') * TILE;
+			store.player.y = (objects[index][2] - '0') * TILE;
 			set_player_direction(objects[index][0]);
-			free(dictio);
+
 			break ;
 		}
 	}

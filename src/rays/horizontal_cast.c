@@ -23,17 +23,17 @@ static	int wall_hit(t_rays *ray)
 
 static void	setup_intersects(float angle, t_rays *ray)
 {
-	ray->intersects.y_intersect = floor(store.player.y / TILE) * TILE;
+	ray->intersects.y_intersect = floorf(store.player.y / TILE) * TILE;
 	ray->intersects.y_intersect += ray->ray_face & RAY_DOWN ? TILE : 0;
 	ray->intersects.x_intersect = store.player.x +
-		(ray->intersects.y_intersect - store.player.y) / tan(angle);
+		(ray->intersects.y_intersect - store.player.y) / tanf(angle);
 }
 
 static void	setup_steps(float angle, t_rays *ray)
 {
 	ray->intersects.y_step = TILE;
 	ray->intersects.y_step *= ray->ray_face & RAY_UP ? -1 : 1;
-	ray->intersects.x_step = TILE / tan(angle);
+	ray->intersects.x_step = TILE / tanf(angle);
 	if (ray->intersects.x_step > 0 && ray->ray_face & RAY_LEFT)
 		ray->intersects.x_step *= -1;
 	if (ray->intersects.x_step < 0 && ray->ray_face & RAY_RIGHT)
@@ -48,7 +48,7 @@ static void	setup_horizontal(t_rays *ray, float angle, int id)
 	ray->horizontal.next_hit_y = ray->intersects.y_intersect;
 }
 
-void		hortizontal_cast(float angle, int id)
+void		horizontal_cast(float angle, int id)
 {
 	float	map_x;
 	float	map_y;
@@ -65,7 +65,7 @@ void		hortizontal_cast(float angle, int id)
 			ray->horizontal.wall_hit_x = ray->horizontal.next_hit_x;
 			ray->horizontal.wall_hit_y = ray->horizontal.next_hit_y;
 			ray->horizontal.wall_content = store.map.grid
-				[(int)floor(map_y / TILE)][(int)floor(map_x / TILE)];
+				[(int)floorf(map_y / TILE)][(int)floorf(map_x / TILE)];
 			ray->horizontal.wall_hit |= 1;
 			break ;
 		}

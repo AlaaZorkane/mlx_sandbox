@@ -39,6 +39,8 @@ typedef struct s_img
 }	t_img;
 
 
-void	put_pixel(int x, int y, int color);
 void	matrix_clear(int color);
+void	render();
+void	image_setup();
+void	set_dimensions();
 #endif

@@ -15,19 +15,19 @@
 static void prepare_ray_projection(t_rays *ray)
 {
 	ray->projection.wall_distance =
-		ray->distance * cos(ray->ray_angle - store.player.rotation_angle);
+		ray->distance * cosf(ray->ray_angle - store.player.rotation_angle);
 	ray->projection.plane_distance = (store.img.width / 2) / tan(FOV / 2);
 	ray->projection.wall_height = (TILE / ray->projection.wall_distance)
 		* ray->projection.plane_distance;
 	ray->projection.line_height = (int)ray->projection.wall_height;
 	ray->projection.wall_top =
-		(store.img.width / 2) - ray->projection.line_height / 2;
+		(store.img.height / 2) - (ray->projection.line_height / 2);
 	ray->projection.wall_bottom =
-		(store.img.width / 2) - ray->projection.line_height / 2;
+		(store.img.height / 2) + (ray->projection.line_height / 2);
 	if (ray->projection.wall_top < 0)
 		ray->projection.wall_top = 0;
-	if (ray->projection.wall_bottom > store.img.width)
-		ray->projection.wall_bottom = store.img.width;
+	if (ray->projection.wall_bottom > store.img.height)
+		ray->projection.wall_bottom = store.img.height;
 }
 
 void		project()
@@ -36,7 +36,7 @@ void		project()
 	t_rays	*ray;
 
 	id = -1;
-	while (id < store.img.width)
+	while (++id < store.img.width)
 	{
 		ray = &(store.rays[id]);
 		prepare_ray_projection(ray);

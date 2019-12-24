@@ -17,8 +17,8 @@ void player_move() {
 	
 	velocity = store.player.walk_direction * store.player.walk_speed;
     store.player.rotation_angle += store.player.turn_direction * store.player.turn_speed;
-	store.player.y += sin(store.player.rotation_angle) * velocity;
-	store.player.x += cos(store.player.rotation_angle) * velocity;
+	store.player.y += sinf(store.player.rotation_angle) * velocity;
+	store.player.x += cosf(store.player.rotation_angle) * velocity;
 }
 
 void player_setup()

@@ -29,6 +29,7 @@ static float	prepare_angle(float angle, int id)
 		store.rays[id].ray_face |= RAY_RIGHT;
 	else
 		store.rays[id].ray_face |= RAY_LEFT;
+	return (angle);
 }
 
 static void		record_direction(char direction, float distance, t_rays *ray)
@@ -83,12 +84,13 @@ static void		cast_ray(float angle, int id)
 	record_cast(horizontal_distance, vertical_distance, angle, id);
 }
 
-void		cast_rays()
+void			cast_rays()
 {
 	int		id;
     float	angle;
 
 	id = -1;
+	rays_setup();
 	angle = store.player.rotation_angle - FOV / 2;
 	while (++id < store.img.width)
 	{
