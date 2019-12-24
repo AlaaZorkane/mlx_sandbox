@@ -12,24 +12,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="168a021b-ddc6-414c-b28f-7ad0bead2649" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/control.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/control.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/cub3d.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/cub3d.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/image.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/image.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/rays.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/rays.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/control/keys.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/control/keys.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/draw/draw.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/draw/draw.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/extra/utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/extra/utils.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/image/image.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/image.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/map/map.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/map/map.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/map/utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/map/utils.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/player/player.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/player/player.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/player/utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/player/utils.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rays/horizontal_cast.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/rays/horizontal_cast.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rays/project.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/rays/project.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rays/rays.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/rays/rays.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rays/vertical_cast.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/rays/vertical_cast.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +76,7 @@
       <workItem from="1576726922065" duration="6848000" />
       <workItem from="1576746880090" duration="7431000" />
       <workItem from="1577195602398" duration="2593000" />
-      <workItem from="1577211985773" duration="6810000" />
+      <workItem from="1577211985773" duration="6993000" />
     </task>
     <servers />
   </component>
@@ -189,11 +173,6 @@
           <url>file://$PROJECT_DIR$/src/image/image.c</url>
           <line>48</line>
           <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.c</url>
-          <line>38</line>
-          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
